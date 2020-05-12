@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+  <!-- Twitter meta-->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@pratikborsadiya">
+  <meta property="twitter:creator" content="@pratikborsadiya">
+  <!-- Open Graph Meta-->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vali Admin">
+  <meta property="og:title" content="Vali - Free Bootstrap 4 admin theme">
+  <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+  <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+  <meta property="og:description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+  <title>填写清单</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS-->
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/triage.css">
+  <link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+  <link rel="stylesheet" href="../css/bootstrap-switch.css">
+  <!-- Font-icon css-->
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body class="app sidebar-mini">
+  <!-- Navbar-->
+  <header class="app-header"><a class="app-header__logo" href="index.html">Yiyi</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+      <!-- User Menu-->
+      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i
+            class="fa fa-user fa-lg"></i></a>
+        <ul class="dropdown-menu settings-menu dropdown-menu-right">
+          <li><a class="dropdown-item" href="Staff_PersonInfo.html"><i class="fa fa-user fa-lg"></i> 个人资料</a></li>
+          <li><a class="dropdown-item" href="Staff_Changepwd.html"><i class="fa fa-cog fa-lg"></i> 修改密码</a></li>
+          <li><a class="dropdown-item" href="../index.html"><i class="fa fa-sign-out fa-lg"></i> 注销</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+        src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+      <div>
+        <p class="app-sidebar__user-name">John Doe</p>
+        <p class="app-sidebar__user-designation">Frontend Developer</p>
+      </div>
+    </div>
+    <ul class="app-menu">
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+            class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">病历</span><i
+            class="treeview-indicator fa fa-angle-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class="treeview-item" href="Doctor_MedicalRecord_Add.html"><i class="icon fa fa-circle-o"></i> 新增病历</a>
+          </li>
+          <li><a class="treeview-item" href="Doctor_MedicalRecord_History.html"><i class="icon fa fa-circle-o"></i>
+              历史记录</a></li>
+          <li><a class="treeview-item" href="Doctor_MedicalRecord_Search.html"><i class="icon fa fa-circle-o"></i>
+              病患查找</a></li>
+        </ul>
+      </li>
+      <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+            class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">点滴提示</span><i
+            class="treeview-indicator fa fa-angle-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class="treeview-item active" href="Nurse_Drip_Add.html"><i class="icon fa fa-circle-o"></i>添加清单</a>
+          </li>
+          <li><a class="treeview-item" href="Nurse_Drip.html"><i class="icon fa fa-circle-o"></i> 查看清单</a></li>
+        </ul>
+      </li>
+      <li><a class="app-menu__item" href="Staff_Triage_UpdateTriageInfo.html"><i
+            class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">分诊管理</span></a></li>
+
+      <li><a class="app-menu__item" href="Staff_Chat.html"><i class="app-menu__icon fa fa-file-text"></i><span
+            class="app-menu__label">消息盒子</span></a></li>
+    </ul>
+  </aside>
+
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="fa fa-th-list"></i> 添加清单</h1>
+      </div>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item">点滴提示</li>
+        <li class="breadcrumb-item active"><a href="#">添加清单</a></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tile">
+          <h3 class="tile-title">添加清单</h3>
+          <div class="tile-body">
+            <form>
+              <div class="form-group">
+                <label class="control-label">患者ID</label>
+                <div class="row" style="padding-left: 15px;padding-right: 15px">
+                  <input class="form-control" type="text" id="" placeholder="输入患者ID" style="width:83%">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label">点滴数量</label>
+                <div class="row" style="padding-left: 15px;padding-right: 15px">
+                  <input class="form-control" id="quantity" type="number" placeholder="输入点滴数量后确认""
+                    style=" width:83%">
+                  <div style="width:2%"></div>
+                  <button class="btn btn-outline-primary" type="button" style="width:15%;float:right;" onclick="q()">确认</button>
+                </div>
+              </div>
+              <div id="start">
+              </div>
+              <div class="form-group">
+                <label class="control-label">开始时间</label>
+                <div class="row" style="padding-left: 15px;padding-right: 15px">
+                  <input class="form-control" id="starttime" type="text" placeholder="可点击获取获得当前时间" style="width:83%">
+                  <div style="width:2%"></div>
+                  <button class="btn btn-outline-primary" type="button" style="width:15%" onclick="time()">获取</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tile-footer">
+            <button class="btn btn-primary" type="button"><i
+                class="fa fa-fw fa-lg fa-check-circle"></i>确认</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary"
+              href="drip-add.html"><i class="fa fa-fw fa-lg fa-times-circle"
+                onclick="window.open('drip-add.html','_self')"></i>重置</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="tile">
+          <h3 class="tile-title">信息表
+            <div class="toggle-flip" style="float:right;">
+              <label>
+                <input id="check" type="checkbox" onchange="next(this)" checked>
+              </label>
+            </div>
+          </h3>
+          <div class="tile-body" id="patient" style="width:auto;height:auto;">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered" id="sampleTable">
+                <thead>
+                  <tr>
+                    <th>患者ID</th>
+                    <th>患者姓名</th>
+                    <th>手机号码</th>
+                    <th>确认添加</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>123456</td>
+                    <td>张三</td>
+                    <td>12345678901</td>
+                    <td>添加</td>
+                  </tr>
+                  <tr>
+                    <td>123457</td>
+                    <td>张四</td>
+                    <td>12345678902</td>
+                    <td>添加</td>
+                  </tr>
+                  <tr>
+                    <td>123458</td>
+                    <td>张五</td>
+                    <td>12345678903</td>
+                    <td>添加</td>
+                  </tr>
+                  <tr>
+                    <td>123459</td>
+                    <td>张六</td>
+                    <td>12345678904</td>
+                    <td>添加</td>
+                  </tr>
+                  <tr>
+                    <td>123460</td>
+                    <td>张七</td>
+                    <td>12345678905</td>
+                    <td>添加</td>
+                  </tr>
+                  <tr>
+                    <td>123461</td>
+                    <td>张八</td>
+                    <td>12345678906</td>
+                    <td>添加</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tile-body" id="drip" style="display:none;width:auto;height:auto;">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered" id="sampleTable1">
+                <thead>
+                  <tr>
+                    <th>点滴ID</th>
+                    <th>点滴名称</th>
+                    <th>用药剂量</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>987654</td>
+                    <td>吗啡</td>
+                    <td>2mg iv</td>
+                  </tr>
+                  <tr>
+                    <td>987653</td>
+                    <td>阿托品</td>
+                    <td>0.5mg iv或1mg iv </td>
+                  </tr>
+                  <tr>
+                    <td>987652</td>
+                    <td>力月西</td>
+                    <td>1ml-5ml（1mg-5mg）/h </td>
+                  </tr>
+                  <tr>
+                    <td>987651</td>
+                    <td>腺苷ATP</td>
+                    <td>10-20mg iv 快速</td>
+                  </tr>
+                  <tr>
+                    <td>987650</td>
+                    <td>异搏定</td>
+                    <td>5%GS 10ml+异搏定5mg iv </td>
+                  </tr>
+                  <tr>
+                    <td>987649</td>
+                    <td>依布力特</td>
+                    <td>NS 20ml+依布力特 1mg iv</td>
+                  </tr>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <!-- Essential javascripts for application to work-->
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/main.js"></script>
+  <!-- The javascript plugin to display page loading on top-->
+  <script src="../js/plugins/pace.min.js"></script>
+  <script src="../layui/layui.js"></script>
+  <!-- Page specific javascripts-->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/highlight.js"></script>
+  <script src="../js/bootstrap-switch.js"></script>
+  <script src="../js/main1.js"></script>
+  <!-- Data table plugin-->
+  <script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../js/plugins/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript">$('#sampleTable').dataTable({
+      "bLengthChange": true, //开关，是否显示每页显示多少条数据的下拉框
+      'iDisplayLength': 5, //每页初始显示5条记录
+      'bFilter': true,  //是否使用内置的过滤功能（是否去掉搜索框）
+      "bInfo": true, //开关，是否显示表格的一些信息(当前显示XX-XX条数据，共XX条)
+      "bPaginate": true, //开关，是否显示分页器
+      "bSort": true, //是否可排序 
+      "oLanguage": {  //语言转换
+        "sInfo": "显示第 _START_ 至 _END_ 项结果，共_TOTAL_ 项",
+        "sZeroRecords": "对不起，查询不到任何相关数据",
+        "sLengthMenu": "每页显示 _MENU_ 项结果",
+        "oPaginate": {
+          "sFirst": "首页",
+          "sPrevious": "前一页",
+          "sNext": "后一页",
+          "sLast": "尾页"
+        }
+      }
+    });
+  </script>
+  <script type="text/javascript">$('#sampleTable1').dataTable({
+      "bLengthChange": true, //开关，是否显示每页显示多少条数据的下拉框
+      'iDisplayLength': 5, //每页初始显示5条记录
+      'bFilter': true,  //是否使用内置的过滤功能（是否去掉搜索框）
+      "bInfo": true, //开关，是否显示表格的一些信息(当前显示XX-XX条数据，共XX条)
+      "bPaginate": true, //开关，是否显示分页器
+      "bSort": true, //是否可排序 
+      "oLanguage": {  //语言转换
+        "sInfo": "显示第 _START_ 至 _END_ 项结果，共_TOTAL_ 项",
+        "sZeroRecords": "对不起，查询不到任何相关数据",
+        "sLengthMenu": "每页显示 _MENU_ 项结果",
+        "oPaginate": {
+          "sFirst": "首页",
+          "sPrevious": "前一页",
+          "sNext": "后一页",
+          "sLast": "尾页"
+        }
+      }
+    });
+  </script>
+  <!-- Google analytics script-->
+  <script type="text/javascript">
+    if (document.location.hostname == 'pratikborsadiya.in') {
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-72504830-1', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
+  <script>
+    function q() {
+      var inputCounts = $("#quantity").val();
+      $("#quantity").attr({ "disabled": "disabled" });
+      for (var i = 0; i < inputCounts; i++) {
+        var strHtml = "";
+        strHtml += '<div class="form-group"><label class="control-label">点滴ID' + (i + 1) + '</label><div class="row" style="padding-left: 15px;padding-right: 15px"><input class="form-control" type="text" placeholder="输入点滴ID" style="width:83%"></div></div>';
+        $("#start").append(strHtml);
+      }
+    }
+  </script>
+  <script>
+    function time() {
+      var myDate = new Date();
+      var now = myDate.toLocaleString();
+      now = now.replace(/\//g, "-");
+      var oinput = document.getElementById('starttime');
+      var period = now.substring(10, 12);//上午or下午
+      var hour = parseInt(now.substring(12, now.indexOf(':')));
+      if (period == "下午") {
+        hour += 12;
+      }
+      now = now.substring(0, 8) + " " + hour + now.substring(now.indexOf(':'));
+      oinput.value = now;
+    }
+
+    function next(checkbox) {
+      if (checkbox.checked == true) {
+        document.getElementById("patient").style.display = "block";
+        document.getElementById("drip").style.display = "none"; 
+      }
+      else {
+        document.getElementById("drip").style.display = "block";
+        document.getElementById("patient").style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>
