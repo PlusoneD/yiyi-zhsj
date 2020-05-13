@@ -16,7 +16,7 @@
   <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
   <meta property="og:description"
     content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-  <title>填写清单</title>
+  <title>易医 - 填写清单</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,6 +61,8 @@
       </div>
     </div>
     <ul class="app-menu">
+      <li><a class="app-menu__item active" href="Doctor_Call.html"><i class="app-menu__icon fa fa-pie-chart"></i><span
+            class="app-menu__label">查看预约</span></a></li>
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">病历</span><i
             class="treeview-indicator fa fa-angle-right"></i></a>
@@ -119,7 +121,8 @@
                   <input class="form-control" id="quantity" type="number" placeholder="输入点滴数量后确认""
                     style=" width:83%">
                   <div style="width:2%"></div>
-                  <button class="btn btn-outline-primary" type="button" style="width:15%;float:right;" onclick="q()">确认</button>
+                  <button class="btn btn-outline-primary" type="button" style="width:15%;float:right;"
+                    onclick="q()">确认</button>
                 </div>
               </div>
               <div id="start">
@@ -359,7 +362,7 @@
     function next(checkbox) {
       if (checkbox.checked == true) {
         document.getElementById("patient").style.display = "block";
-        document.getElementById("drip").style.display = "none"; 
+        document.getElementById("drip").style.display = "none";
       }
       else {
         document.getElementById("drip").style.display = "block";

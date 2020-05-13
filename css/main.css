@@ -16141,8 +16141,8 @@ be a descendant of the grid when it is being dragged.
           flex: 1;
   margin: 10px 0;
   padding: 0 10px;
-  max-height: 300px;
-  min-height: 300px;
+  max-height:300px;
+  min-height:300px;
   overflow-y: auto;
   overflow-x: hidden;
 }

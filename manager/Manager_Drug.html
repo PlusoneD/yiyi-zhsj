@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <!-- Twitter meta-->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@pratikborsadiya">
-    <meta property="twitter:creator" content="@pratikborsadiya">
-    <!-- Open Graph Meta-->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="YY">
-    <meta property="og:title" content="">
-    <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
-    <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
-    <meta property="og:description" content="YYProject is only programmed for zhsjsy.">
-    <title>易医-药品管理</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <head>
-<meta charset="UTF-8">
-<title>易医-药品管理</title>
+  <meta name="description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+  <!-- Twitter meta-->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@pratikborsadiya">
+  <meta property="twitter:creator" content="@pratikborsadiya">
+  <!-- Open Graph Meta-->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="YY">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+  <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+  <meta property="og:description" content="YYProject is only programmed for zhsjsy.">
+  <title>易医 - 管理系统</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS-->
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- Font-icon css-->
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
+
 <body class="app sidebar-mini">
-   <!-- Navbar-->
-   <header class="app-header"><a class="app-header__logo" href="#">Yiyi</a>
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+  <!-- Navbar-->
+  <header class="app-header"><a class="app-header__logo" href="#">Yiyi</a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
       <!-- 小人菜单栏-->
-      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+      <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i
+            class="fa fa-user fa-lg"></i></a>
         <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="Manager_Changepwd.html"><i class="fa fa-sign-out fa-lg"></i> 修改密码</a></li>
-            <li><a class="dropdown-item" href="../index.html"><i class="fa fa-sign-out fa-lg"></i> 注销</a></li>
+          <li><a class="dropdown-item" href="Manager_Changepwd.html"><i class="fa fa-sign-out fa-lg"></i> 修改密码</a></li>
+          <li><a class="dropdown-item" href="../index.html"><i class="fa fa-sign-out fa-lg"></i> 注销</a></li>
         </ul>
       </li>
     </ul>
   </header>
   <!--统一导航栏-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-   <aside class="app-sidebar">
+  <aside class="app-sidebar">
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../images/manager.jpg " alt="User Image">
       <div>
         <p class="app-sidebar__user-name">管理人员名</p>
@@ -50,197 +54,218 @@
       </div>
     </div>
     <ul class="app-menu">
-      <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">预约管理</span></a></li>
-      <li><a class="app-menu__item" href="Manager_Drug.html"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">药品管理</span></i></a>
-      
+      <li><a class="app-menu__item" href="Manager_Appointment.html"><i class="app-menu__icon fa fa-dashboard"></i><span
+            class="app-menu__label">预约管理</span></a></li>
+      <li><a class="app-menu__item active" href="Manager_Drug.html"><i class="app-menu__icon fa fa-laptop"></i><span
+            class="app-menu__label">药品管理</span></i></a>
+
       </li>
-      <li><a class="app-menu__item" href="Manager_Symptom.html"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">病症管理</span></i></a>
-        
+      <li><a class="app-menu__item" href="Manager_Symptom.html"><i class="app-menu__icon fa fa-laptop"></i><span
+            class="app-menu__label">病症管理</span></i></a>
+
       </li>
-      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">用户管理</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+            class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">用户管理</span><i
+            class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
-            <li><a class="treeview-item" href="Manager_Data_Patient.html"><i class="icon fa fa-circle-o"></i>患者管理</a></li>
-            <li><a class="treeview-item" href="Manager_Data_Staff.html"><i class="icon fa fa-circle-o"></i>职工管理</a></li>
+          <li><a class="treeview-item" href="Manager_Data_Patient.html"><i class="icon fa fa-circle-o"></i>患者管理</a></li>
+          <li><a class="treeview-item" href="Manager_Data_Staff.html"><i class="icon fa fa-circle-o"></i>职工管理</a></li>
         </ul>
       </li>
     </ul>
   </aside>
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="fa fa-th-list"></i> 药品管理</h1>
-          <p>管理员药品数据库管理</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item">数据库管理</li>
-          <li class="breadcrumb-item active"><a href="#">药品数据库</a></li>
-        </ul>
-        <a class="btn btn-primary icon-btn" href="Manager_Drug_UpdateForm.html" target="_blank"><i class="fa fa-file"></i>修改</a>
-        
-     </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-              <div class="table-responsive">
-                 <table class="table table-hover table-bordered" id="sampleTable">
-                  <thead>
-                    <tr>
-                      <th>编号</th>
-                      <th>名称</th>
-                      <th>功能主治</th>
-                      <th>用法用量</th>
-                      <th>主要成分</th>
-                      <th>公司/产地</th>
-                      <th>注意事项</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <th>A0001</th>
-                      <td>金喉健喷雾剂</td>
-                      <td>中医：祛风解毒，消肿止痛，清咽利喉。用于风热所致咽痛、咽干、牙龈肿痛、口腔溃疡。</td>
-                      <td>喷患处，每次适量，一日数次。</td>
-                      <td>艾纳香油、大果木姜子油、薄荷脑、甘草酸单胺盐。辅料为乙醇。</td>
-                      <td>贵州宏宇药业有限公司</td>
-                      <td>不良反应：尚不明确。忌辛辣、鱼腥食物。使用时应避免接触眼睛。不宜在服药期间同时服用温补性中药。孕妇慎用。儿童应在医师指导下使用。切勿置本品于近火及高温处并严禁剧烈碰撞，使用时勿近明火。 对本品及酒精过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。儿童必须在成人监护下使用。密封，置阴凉处（不超过20℃）。</td>
-                    </tr>
-                    <tr>
-                        <th>A0002</th>
-                      <td>清凉油</td>
-                      <td>清凉散热，醒脑提神，止痒止痛。用于感冒头痛，中暑，晕车，蚊虫叮咬。</td>
-                      <td>搽于头部太阳穴或患处，一日2～3次。</td>
-                      <td>薄荷脑、薄荷素油、樟脑、桉油、丁香油、肉桂油、樟脑油。</td>
-                      <td>上海医药集团有限公司中华药业分公司</td>
-                      <td>本品为外用药，禁止内服。使用本品时切勿触及眼睛、口腔等黏膜，皮肤破损处忌用。孕妇慎用。涂布部位如有明显灼热感或瘙痒、局部红肿等情况，应停止用药，洗净，必要时向医师咨询。对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。儿童必须在成人监护下使用。请将本品放在儿童不能接触的地方。密闭，避光。</td>
-                    </tr>
-                    <tr>
-                        <th>B0001</th>
-                      <td>阿莫西林Amoxicillin</td>
-                      <td>抗生素类药。用以治疗伤寒、其他沙门菌感染和伤寒带菌者可获得满意疗效。阿莫西林杀菌作用强，穿透细胞壁的能力也强。是目前应用较为广泛的口服青霉素之一，其制剂有胶囊、片剂、颗粒剂、分散片等等。</td>
-                      <td>口服：成人及体重超过40公斤的儿童每次1～2粒（0.25～0.5g），每6～8小时1次，一日剂量不超过4g（16粒）；体重小于40公斤的儿童按体重20～40mg/kg/日, 分2～3次服用；三个月以下婴儿30mg/kg/日，分次服用，每12小时1次；肾功能严重损害患者需调整给药剂量，其中内生肌酐清除率为10~30ml/分钟的患者每12小时0.25~0.5g。本品可在空腹或饭后服用，并可和牛奶等 食物同服。奈瑟氏淋球菌尿道炎可单次口服本品3g。肌内注射：0.5～1g/次，一日3～4次。静脉滴注：0.5～1g/次，一日3～4次。肾功能严重不足者应当延长用药时间隔；肾小球滤过率10～15ml/min者，8～12小时给药一次；小于10ml/min 者12～16小时给药一次。</td>
-                      <td>(2S,5R,6R)-3,3-二甲基-6-[(R)-(-)-2-氨基-2-(4-羟基苯基)乙酰氨基]-7-氧代-4-硫杂-1-氮杂双环[3.2.0]庚烷-2-甲酸三水合物。</td>
-                      <td>海关编码：2941109200</td>
-                      <td>青霉素过敏及青霉素皮肤试验阳性患者禁用。传染性单核细胞增多症、淋巴细胞性白血病、巨细胞病毒感染、淋巴瘤等患者禁用。哮喘、湿疹、枯草热、荨麻疹等过敏性疾病史者；疱疹病毒感染者，尤其是传染性单核细胞增多症患者(可增强皮肤不良反应的危险性)；应慎用。用含硫酸铜的片状试剂(R)、费林溶液测定尿糖时可能会导致假阳性反应；少数患者用药后可出现血清转氨酶升高、嗜酸粒细胞增多和白细胞减少。孕妇和哺乳期妇女以及3个月以下儿童慎用。 晚期妊娠孕妇应用后，可使血浆中结合的雌激素浓度减少，但对游离的雌激素和孕激素无影响。 本品可经乳汁排出，乳母使用本品后可使婴儿致敏。</td>
-                    </tr>
-                  
-                    <tr>
-                        <th>B0002</th>
-                      <td>阿司匹林Aspirin</td>
-                      <td>用于发热、疼痛及类风湿关节炎、抗血栓、抑制血小板凝集</td>
-                      <td>小儿口服量：①解热、镇痛，每日按体表面积1.5g/平方米，分4～6次口服，或每次按体重5～10mg/kg，或每次每岁60mg，必要时4～6小时1次。②抗风湿，每日按体重80～100mg/kg，分3～4次服，如1～2周未获疗效，可根据血药浓度调整用量。有些病例需增至每日130mg/kg。③小儿用于皮肤粘膜淋巴结综合征（川崎病），开始每日按体重80～100mg/kg，分3～4次服，热退2～3天后改为每日30mg/kg，分 2～4次服，连服2月或更久，血小板增多、血液呈高凝状态期间，每日5～10mg/kg，1次顿服。④预防血栓、动脉粥样硬化及心肌梗塞：0.3g/次，一日1次；预防暂时性脑缺血，每次0.6g，一日2次。⑤治疗胆道蛔虫：每次1g，一日2～3次，连服2～3日。⑥治疗X线照射或放疗引起的腹泻，每次服0.6～0.9g，一日4次。⑦治足癣，先用温开水或1：5000高锰酸钾溶液洗涤，然后该品粉末撒布患处，一般2～4次可愈。水杨酸类早晨给药达峰时间长，半衰期长，晚间相反。合理给药应早晨用量略增加。晚间加服一次。 [3] 
-                        成人口服量①解热、镇痛，一次0.3～0.6g，一日3次，必要时每4小时1次。②抗风湿，一日3～5g（急性风湿热可用到7～8g），分4次口服。③抑制血小板聚集，尚无明确用量，多数主张应用小剂量，如50～150mg，每24小时 1次。④治疗胆道蛔虫病，一次1g，一日2～3次，连用2～3日；阵发性绞疼停止 24小时后停用，然后进行驱虫治疗。</td>
-                      <td>经水杨酸乙酰化而得</td>
-                      <td>成都嘉业生物科技有限公司</td>
-                      <td>一、手术前一周应停用，避免凝血功能障碍，造成出血不止。
-                        二、饮酒后不宜用，因为能加剧胃粘膜屏障损伤，从而导致胃出血。
-                        三、潮解后不宜用，阿司匹林遇潮分解成水杨酸与醋酸，服后可造成不良反应。
-                        四、凝血功能障碍者避免使用，如严重肝损害、低凝血酶原血症、维生素K缺乏者。
-                        五、溃疡病人不宜使用。患有胃及十二指肠溃疡的病人服用阿司匹林可导致出血或穿孔。
-                        六、哮喘病人应避免使用，有部分哮喘患者可在服用阿司匹林后出现过敏反应，如荨麻疹、喉头水肿、哮喘大发作。
-                        七、孕妇不宜服用。孕后三个月内服用可引起胎儿异常；定期服用，可致分娩延期，并有较大出血危险，在分娩前2-3周应禁用。
-                        八、不宜长期大量服用，否则可引起中毒，出现头痛、眩晕、恶心、呕吐、耳鸣、听力和视力减退，严重者酸碱平衡失调、精神错乱、昏迷，甚至危及生命。
-                        九、病毒性感染伴有发热的儿童不宜使用，有报道，16岁以下的儿童、少年患流感、水痘或其它病毒性感染，再服用阿司匹林，出现严重的肝功能不全合并脑病症状，虽少见，却可致死。</td>
-                    </tr>
-                    <tr>
-                        <th>C0001</th>
-                      <td>甘芪和胃颗粒</td>
-                      <td>具有益气健脾，理气止痛，清热和胃的功效。适用于慢性浅表性胃炎、消化性溃疡属气滞郁火证所见的胃脘胀痛，脘部灼热，食少、嗳腐吞酸，口干口苦等症状。</td>
-                      <td>饭后15分钟，开水冲服，一次10g，一日三次，或遵医嘱。</td>
-                      <td>由黄芪，甘草，白芍，延胡索，海螺蛸，白及，地榆，大黄(酒制)，鸡内金，山楂枳壳，木香等组成。</td>
-                      <td>委托上海宝龙药业有限公司配置。</td>
-                      <td>不良反应：
-                        尚不明确。
-                        禁忌：
-                        尚不明确。
-                        注意事项：
-                        尚不明确。
-                        药物相互作用：
-                        如与其他药物同时使用可能会发生药物相互作用，详情请咨询医师或药师。</td>
-                    </tr>
-                    <tr>
-                        <th>B0003</th>
-                      <td>布洛芬</td>
-                      <td>用于缓解轻至中度疼痛如头痛、关节痛、偏头痛、牙痛、肌肉痛、神经痛、痛经。也用于普通感冒或流行性感冒引起的发热。</td>
-                      <td>抗风湿，口服：0.4～0.6克/次，3～4次/日。
-                        用于急性的轻、中度疼痛和发热，0.2～0.4克/次，每4～6小时一次，最大限量为2.4克/日。缓释胶囊：成人及12岁以上儿童，0.3～0.6克/次，2次/日。
-                        </td>
-                      <td>糖、淀粉、硬脂酸、聚乙烯吡咯烷酮。</td>
-                      <td>武汉兴起点生物科技有限公司</td>
-                      <td>消化道反应为最常见的不良反应，大剂量时有骨髓抑制和肝功损害。严重肝肾功能不全者或严重心力衰竭者禁用。
-                        禁忌：
-                        对阿司匹林或其他非甾体类消炎药过敏者对本品可有交叉过敏反应，禁用。活动性或有既往消化性溃疡史，胃肠道出血或穿孔的患者禁用。孕妇及哺乳期妇女禁用。
-                        药物相互作用：
-                        1. 与肝素及口服抗凝药同用时，有增加出血的危险。
-                        2. 与呋塞米同用时，后者的降压作用减弱。
-                        3. 与维拉帕米、硝苯地平、丙磺舒同用时，布洛芬的血药浓度增高。
-                        4. 使氨甲蝶呤、地高辛、降糖药的作用增强或毒性增加。</td>
-                    </tr>
-                    <tr>
-                        <th>A0003</th>
-                      <td>双黄连</td>
-                      <td>主要功效：
-                        疏风解表，清热解毒。
-                        适应病症：
-                        用于外感风热所致的感冒，症见发热、咳嗽、咽痛。</td>
-                      <td>1.口服
-                        （1）口服液：一次20mL，一日3次；小儿酌减或遵医嘱。
-                        （2）颗粒剂：开水冲化，一次10g，一日3次；6个月以下，一次2~3g；6个月至一岁，一次3~4g；一岁至三岁，一次4~5g，三岁以上儿童酌量或遵医嘱；无蔗糖颗粒，服用量减半。
-                        （3）片剂：一次4片，一日3次；小儿酌减或遵医嘱。
-                        （4）糖浆剂：一次20mL，一日3次；小儿酌减或遵医嘱。
-                        （5）合剂：一次10mL，一日3次；小儿酌减或遵医嘱。
-                        （6）胶囊剂：一次4粒，一日3次；儿童酌减或遵医嘱。
-                        2. 注射
-                        （1）注射液：静脉注射，一次10～20ml，一日1～2次。静脉滴注，每次公斤体重1ml，加入生理盐水或5～10%葡萄糖溶液中。肌注一次2～4ml，一日2次。
-                        （2）注射剂（冻干）：静脉滴注。每次每千克体重60mg，一日1次；或遵医嘱。临用前，先以适量灭菌注射用水充分溶解，再用氯化钠注射液或5%葡萄糖溶液500ml稀释。</td>
-                      <td>由金银花、黄芩、连翘组成</td>
-                      <td>神奇制药,太龙药业,哈药股份</td>
-                      <td>1. 忌烟、酒及辛辣、生冷、油腻食物。
-                        2. 不宜在服药期间同时服用滋补性中药。
-                        3. 风寒感冒者不适用。
-                        4. 有高血压、心脏病、肝病、糖尿病、肾病等慢性病严重者应在医师指导下服用。
-                        5. 儿童、孕妇、哺乳期妇女、年老体弱及脾虚便溏者应在医师指导下服用。
-                        6. 发热体温超过38.5℃的患者，应去医院就诊。
-                        7. 服药3天症状无缓解，应去医院就诊。
-                        8. 对本品过敏者禁用，过敏体质者慎用。
-                        9. 儿童必须在成人监护下使用。
-                        10. 如正在使用其他药品，使用本品前请咨询医师或药师。</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1>药品管理</h1>
+      </div>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item">数据库管理</li>
+        <li class="breadcrumb-item active"><a href="#">药品数据库</a></li>
+      </ul>
+      <a class="btn btn-primary icon-btn" href="Manager_Drug_UpdateForm.html" target="_blank"><i
+          class="fa fa-file"></i>修改</a>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered" id="sampleTable">
+                <thead>
+                  <tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>功能主治</th>
+                    <th>用法用量</th>
+                    <th>主要成分</th>
+                    <th>公司/产地</th>
+                    <th>注意事项</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>A0001</th>
+                    <td>金喉健喷雾剂</td>
+                    <td>中医：祛风解毒，消肿止痛，清咽利喉。用于风热所致咽痛、咽干、牙龈肿痛、口腔溃疡。</td>
+                    <td>喷患处，每次适量，一日数次。</td>
+                    <td>艾纳香油、大果木姜子油、薄荷脑、甘草酸单胺盐。辅料为乙醇。</td>
+                    <td>贵州宏宇药业有限公司</td>
+                    <td>不良反应：尚不明确。忌辛辣、鱼腥食物。使用时应避免接触眼睛。不宜在服药期间同时服用温补性中药。孕妇慎用。儿童应在医师指导下使用。切勿置本品于近火及高温处并严禁剧烈碰撞，使用时勿近明火。
+                      对本品及酒精过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。儿童必须在成人监护下使用。密封，置阴凉处（不超过20℃）。</td>
+                  </tr>
+                  <tr>
+                    <th>A0002</th>
+                    <td>清凉油</td>
+                    <td>清凉散热，醒脑提神，止痒止痛。用于感冒头痛，中暑，晕车，蚊虫叮咬。</td>
+                    <td>搽于头部太阳穴或患处，一日2～3次。</td>
+                    <td>薄荷脑、薄荷素油、樟脑、桉油、丁香油、肉桂油、樟脑油。</td>
+                    <td>上海医药集团有限公司中华药业分公司</td>
+                    <td>
+                      本品为外用药，禁止内服。使用本品时切勿触及眼睛、口腔等黏膜，皮肤破损处忌用。孕妇慎用。涂布部位如有明显灼热感或瘙痒、局部红肿等情况，应停止用药，洗净，必要时向医师咨询。对本品过敏者禁用，过敏体质者慎用。本品性状发生改变时禁止使用。儿童必须在成人监护下使用。请将本品放在儿童不能接触的地方。密闭，避光。
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>B0001</th>
+                    <td>阿莫西林Amoxicillin</td>
+                    <td>抗生素类药。用以治疗伤寒、其他沙门菌感染和伤寒带菌者可获得满意疗效。阿莫西林杀菌作用强，穿透细胞壁的能力也强。是目前应用较为广泛的口服青霉素之一，其制剂有胶囊、片剂、颗粒剂、分散片等等。
+                    </td>
+                    <td>口服：成人及体重超过40公斤的儿童每次1～2粒（0.25～0.5g），每6～8小时1次，一日剂量不超过4g（16粒）；体重小于40公斤的儿童按体重20～40mg/kg/日,
+                      分2～3次服用；三个月以下婴儿30mg/kg/日，分次服用，每12小时1次；肾功能严重损害患者需调整给药剂量，其中内生肌酐清除率为10~30ml/分钟的患者每12小时0.25~0.5g。本品可在空腹或饭后服用，并可和牛奶等
+                      食物同服。奈瑟氏淋球菌尿道炎可单次口服本品3g。肌内注射：0.5～1g/次，一日3～4次。静脉滴注：0.5～1g/次，一日3～4次。肾功能严重不足者应当延长用药时间隔；肾小球滤过率10～15ml/min者，8～12小时给药一次；小于10ml/min
+                      者12～16小时给药一次。</td>
+                    <td>(2S,5R,6R)-3,3-二甲基-6-[(R)-(-)-2-氨基-2-(4-羟基苯基)乙酰氨基]-7-氧代-4-硫杂-1-氮杂双环[3.2.0]庚烷-2-甲酸三水合物。</td>
+                    <td>海关编码：2941109200</td>
+                    <td>
+                      青霉素过敏及青霉素皮肤试验阳性患者禁用。传染性单核细胞增多症、淋巴细胞性白血病、巨细胞病毒感染、淋巴瘤等患者禁用。哮喘、湿疹、枯草热、荨麻疹等过敏性疾病史者；疱疹病毒感染者，尤其是传染性单核细胞增多症患者(可增强皮肤不良反应的危险性)；应慎用。用含硫酸铜的片状试剂(R)、费林溶液测定尿糖时可能会导致假阳性反应；少数患者用药后可出现血清转氨酶升高、嗜酸粒细胞增多和白细胞减少。孕妇和哺乳期妇女以及3个月以下儿童慎用。
+                      晚期妊娠孕妇应用后，可使血浆中结合的雌激素浓度减少，但对游离的雌激素和孕激素无影响。 本品可经乳汁排出，乳母使用本品后可使婴儿致敏。</td>
+                  </tr>
+
+                  <tr>
+                    <th>B0002</th>
+                    <td>阿司匹林Aspirin</td>
+                    <td>用于发热、疼痛及类风湿关节炎、抗血栓、抑制血小板凝集</td>
+                    <td>
+                      小儿口服量：①解热、镇痛，每日按体表面积1.5g/平方米，分4～6次口服，或每次按体重5～10mg/kg，或每次每岁60mg，必要时4～6小时1次。②抗风湿，每日按体重80～100mg/kg，分3～4次服，如1～2周未获疗效，可根据血药浓度调整用量。有些病例需增至每日130mg/kg。③小儿用于皮肤粘膜淋巴结综合征（川崎病），开始每日按体重80～100mg/kg，分3～4次服，热退2～3天后改为每日30mg/kg，分
+                      2～4次服，连服2月或更久，血小板增多、血液呈高凝状态期间，每日5～10mg/kg，1次顿服。④预防血栓、动脉粥样硬化及心肌梗塞：0.3g/次，一日1次；预防暂时性脑缺血，每次0.6g，一日2次。⑤治疗胆道蛔虫：每次1g，一日2～3次，连服2～3日。⑥治疗X线照射或放疗引起的腹泻，每次服0.6～0.9g，一日4次。⑦治足癣，先用温开水或1：5000高锰酸钾溶液洗涤，然后该品粉末撒布患处，一般2～4次可愈。水杨酸类早晨给药达峰时间长，半衰期长，晚间相反。合理给药应早晨用量略增加。晚间加服一次。
+                      [3]
+                      成人口服量①解热、镇痛，一次0.3～0.6g，一日3次，必要时每4小时1次。②抗风湿，一日3～5g（急性风湿热可用到7～8g），分4次口服。③抑制血小板聚集，尚无明确用量，多数主张应用小剂量，如50～150mg，每24小时
+                      1次。④治疗胆道蛔虫病，一次1g，一日2～3次，连用2～3日；阵发性绞疼停止 24小时后停用，然后进行驱虫治疗。</td>
+                    <td>经水杨酸乙酰化而得</td>
+                    <td>成都嘉业生物科技有限公司</td>
+                    <td>一、手术前一周应停用，避免凝血功能障碍，造成出血不止。
+                      二、饮酒后不宜用，因为能加剧胃粘膜屏障损伤，从而导致胃出血。
+                      三、潮解后不宜用，阿司匹林遇潮分解成水杨酸与醋酸，服后可造成不良反应。
+                      四、凝血功能障碍者避免使用，如严重肝损害、低凝血酶原血症、维生素K缺乏者。
+                      五、溃疡病人不宜使用。患有胃及十二指肠溃疡的病人服用阿司匹林可导致出血或穿孔。
+                      六、哮喘病人应避免使用，有部分哮喘患者可在服用阿司匹林后出现过敏反应，如荨麻疹、喉头水肿、哮喘大发作。
+                      七、孕妇不宜服用。孕后三个月内服用可引起胎儿异常；定期服用，可致分娩延期，并有较大出血危险，在分娩前2-3周应禁用。
+                      八、不宜长期大量服用，否则可引起中毒，出现头痛、眩晕、恶心、呕吐、耳鸣、听力和视力减退，严重者酸碱平衡失调、精神错乱、昏迷，甚至危及生命。
+                      九、病毒性感染伴有发热的儿童不宜使用，有报道，16岁以下的儿童、少年患流感、水痘或其它病毒性感染，再服用阿司匹林，出现严重的肝功能不全合并脑病症状，虽少见，却可致死。</td>
+                  </tr>
+                  <tr>
+                    <th>C0001</th>
+                    <td>甘芪和胃颗粒</td>
+                    <td>具有益气健脾，理气止痛，清热和胃的功效。适用于慢性浅表性胃炎、消化性溃疡属气滞郁火证所见的胃脘胀痛，脘部灼热，食少、嗳腐吞酸，口干口苦等症状。</td>
+                    <td>饭后15分钟，开水冲服，一次10g，一日三次，或遵医嘱。</td>
+                    <td>由黄芪，甘草，白芍，延胡索，海螺蛸，白及，地榆，大黄(酒制)，鸡内金，山楂枳壳，木香等组成。</td>
+                    <td>委托上海宝龙药业有限公司配置。</td>
+                    <td>不良反应：
+                      尚不明确。
+                      禁忌：
+                      尚不明确。
+                      注意事项：
+                      尚不明确。
+                      药物相互作用：
+                      如与其他药物同时使用可能会发生药物相互作用，详情请咨询医师或药师。</td>
+                  </tr>
+                  <tr>
+                    <th>B0003</th>
+                    <td>布洛芬</td>
+                    <td>用于缓解轻至中度疼痛如头痛、关节痛、偏头痛、牙痛、肌肉痛、神经痛、痛经。也用于普通感冒或流行性感冒引起的发热。</td>
+                    <td>抗风湿，口服：0.4～0.6克/次，3～4次/日。
+                      用于急性的轻、中度疼痛和发热，0.2～0.4克/次，每4～6小时一次，最大限量为2.4克/日。缓释胶囊：成人及12岁以上儿童，0.3～0.6克/次，2次/日。
+                    </td>
+                    <td>糖、淀粉、硬脂酸、聚乙烯吡咯烷酮。</td>
+                    <td>武汉兴起点生物科技有限公司</td>
+                    <td>消化道反应为最常见的不良反应，大剂量时有骨髓抑制和肝功损害。严重肝肾功能不全者或严重心力衰竭者禁用。
+                      禁忌：
+                      对阿司匹林或其他非甾体类消炎药过敏者对本品可有交叉过敏反应，禁用。活动性或有既往消化性溃疡史，胃肠道出血或穿孔的患者禁用。孕妇及哺乳期妇女禁用。
+                      药物相互作用：
+                      1. 与肝素及口服抗凝药同用时，有增加出血的危险。
+                      2. 与呋塞米同用时，后者的降压作用减弱。
+                      3. 与维拉帕米、硝苯地平、丙磺舒同用时，布洛芬的血药浓度增高。
+                      4. 使氨甲蝶呤、地高辛、降糖药的作用增强或毒性增加。</td>
+                  </tr>
+                  <tr>
+                    <th>A0003</th>
+                    <td>双黄连</td>
+                    <td>主要功效：
+                      疏风解表，清热解毒。
+                      适应病症：
+                      用于外感风热所致的感冒，症见发热、咳嗽、咽痛。</td>
+                    <td>1.口服
+                      （1）口服液：一次20mL，一日3次；小儿酌减或遵医嘱。
+                      （2）颗粒剂：开水冲化，一次10g，一日3次；6个月以下，一次2~3g；6个月至一岁，一次3~4g；一岁至三岁，一次4~5g，三岁以上儿童酌量或遵医嘱；无蔗糖颗粒，服用量减半。
+                      （3）片剂：一次4片，一日3次；小儿酌减或遵医嘱。
+                      （4）糖浆剂：一次20mL，一日3次；小儿酌减或遵医嘱。
+                      （5）合剂：一次10mL，一日3次；小儿酌减或遵医嘱。
+                      （6）胶囊剂：一次4粒，一日3次；儿童酌减或遵医嘱。
+                      2. 注射
+                      （1）注射液：静脉注射，一次10～20ml，一日1～2次。静脉滴注，每次公斤体重1ml，加入生理盐水或5～10%葡萄糖溶液中。肌注一次2～4ml，一日2次。
+                      （2）注射剂（冻干）：静脉滴注。每次每千克体重60mg，一日1次；或遵医嘱。临用前，先以适量灭菌注射用水充分溶解，再用氯化钠注射液或5%葡萄糖溶液500ml稀释。</td>
+                    <td>由金银花、黄芩、连翘组成</td>
+                    <td>神奇制药,太龙药业,哈药股份</td>
+                    <td>1. 忌烟、酒及辛辣、生冷、油腻食物。
+                      2. 不宜在服药期间同时服用滋补性中药。
+                      3. 风寒感冒者不适用。
+                      4. 有高血压、心脏病、肝病、糖尿病、肾病等慢性病严重者应在医师指导下服用。
+                      5. 儿童、孕妇、哺乳期妇女、年老体弱及脾虚便溏者应在医师指导下服用。
+                      6. 发热体温超过38.5℃的患者，应去医院就诊。
+                      7. 服药3天症状无缓解，应去医院就诊。
+                      8. 对本品过敏者禁用，过敏体质者慎用。
+                      9. 儿童必须在成人监护下使用。
+                      10. 如正在使用其他药品，使用本品前请咨询医师或药师。</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </main>
-   <!-- Essential javascripts for application to work-->
-   <script src="../js/jquery-3.3.1.min.js"></script>
-   <script src="../js/popper.min.js"></script>
-   <script src="../js/bootstrap.min.js"></script>
-   <script src="../js/main.js"></script>
-   <!-- The javascript plugin to display page loading on top-->
-   <script src="../js/plugins/pace.min.js"></script>
-   <!-- Page specific javascripts-->
-   <!-- Data table plugin-->
-   <script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
-   <script type="text/javascript" src="../js/plugins/dataTables.bootstrap.min.js"></script>
-   <script type="text/javascript">$('#sampleTable').DataTable();</script>
-    <!-- Data table plugin-->
-    <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">$('#sampleTable').DataTable();</script>
-    <!-- Google analytics script-->
-    <script type="text/javascript">
-      if(document.location.hostname == 'pratikborsadiya.in') {
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-72504830-1', 'auto');
-      	ga('send', 'pageview');
-      }
-    </script>
-  </body>
+    </div>
+  </main>
+  <!-- Essential javascripts for application to work-->
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/main.js"></script>
+  <!-- The javascript plugin to display page loading on top-->
+  <script src="../js/plugins/pace.min.js"></script>
+  <!-- Page specific javascripts-->
+  <!-- Data table plugin-->
+  <script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../js/plugins/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  <!-- Data table plugin-->
+  <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript">$('#sampleTable').DataTable();</script>
+  <!-- Google analytics script-->
+  <script type="text/javascript">
+    if (document.location.hostname == 'pratikborsadiya.in') {
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-72504830-1', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
+</body>
+
 </html>

@@ -51,7 +51,7 @@
       </div>
     </div>
     <ul class="app-menu">
-      <li><a class="app-menu__item" href="Manager_Appointment.html"><i class="app-menu__icon fa fa-dashboard"></i><span
+      <li><a class="app-menu__item active" href="Manager_Appointment.html"><i class="app-menu__icon fa fa-dashboard"></i><span
             class="app-menu__label">预约管理</span></a></li>
       <li><a class="app-menu__item" href="Manager_Drug.html"><i class="app-menu__icon fa fa-laptop"></i><span
             class="app-menu__label">药品管理</span></i></a>
@@ -61,12 +61,12 @@
             class="app-menu__label">病症管理</span></i></a>
 
       </li>
-      <li class="treeview  is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">用户管理</span><i
             class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="Manager_Data_Patient.html"><i class="icon fa fa-circle-o"></i>患者管理</a></li>
-          <li><a class="treeview-item active" href="Manager_Data_Staff.html"><i class="icon fa fa-circle-o"></i>职工管理</a>
+          <li><a class="treeview-item" href="Manager_Data_Staff.html"><i class="icon fa fa-circle-o"></i>职工管理</a>
           </li>
         </ul>
       </li>
@@ -76,12 +76,11 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1>用户管理</h1>
+        <h1>预约管理</h1>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item">用户管理</a></li>
-        <li class="breadcrumb-item"><a style="color:#009688;" href="#">职工资料</a></li>
+        <li class="breadcrumb-item"><a style="color:#009688;" href="#">预约管理</a></li>
       </ul>
     </div>
     <div class="row">
@@ -89,24 +88,11 @@
         <div class="tile">
           <div class="row" style="margin-top: 10px;margin-bottom: 20px;">
             <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-2" style="text-align: center;">
-                  <label style="vertical-align: middle;">选择身份</label>
-                </div>
-                <div class="col-md-3">
-                  <select class="form-control" id="exampleSelect">
-                    <option>全部</option>
-                    <option>医生</option>
-                    <option>护士</option>
-                    <option>分诊员</option>
-                  </select>
-                </div>
-              </div>
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-4">
               <button class="btn btn-outline-primary" type="button" style="float: right;margin-left: 10px;"
-                data-method="addUser" id="addUser">添加用户</button>
+                data-method="addUser" id="addUser">添加</button>
             </div>
           </div>
           <div class="row">
@@ -116,24 +102,78 @@
                   <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
                       <tr>
-                        <th>工号</th>
-                        <th>姓名</th>
                         <th>科室</th>
-                        <th>身份</th>
-                        <th>手机号</th>
+                        <th>门诊时间</th>
+                        <th>时间段</th>
+                        <th>规定人数</th>
+                        <th>预约人数</th>
                         <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>2011/04/25</td>
-                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">查看</button>
-                          <button class="btn btn-primary btn-sm" type="button">删除</button>
-                          <button class="btn btn-primary btn-sm" type="button">恢复原始密码</button></td>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
+                      </tr><tr>
+                        <td>骨科门诊</td>
+                        <td>2020-5-13</td>
+                        <td>10:00--11:00</td>
+                        <td>10</td>
+                        <td>8</td>
+                        <td><button class="btn btn-primary btn-sm select" type="button" data-method="change">修改</button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -150,40 +190,27 @@
     <div class="tile">
       <form class="form-horizontal">
         <div class="form-group row">
-          <label class="control-label col-md-3">姓名</label>
-          <div class="col-md-8">
-            <input class="form-control" type="text" placeholder="请填写姓名">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="control-label col-md-3">工号</label>
-          <div class="col-md-8">
-            <input class="form-control" type="number" placeholder="请填写工号">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="control-label col-md-3">身份</label>
-          <div class="col-md-8">
-            <input class="form-control" type="phone" placeholder="请填写身份">
-          </div>
-        </div>
-        <div class="form-group row">
           <label class="control-label col-md-3">科室</label>
           <div class="col-md-8">
-            <input class="form-control" type="email" placeholder="科室">
+            <input class="form-control" type="text" placeholder="请填写科室">
           </div>
         </div>
-
         <div class="form-group row">
-          <label class="control-label col-md-3">性别</label>
-          <div class="animated-radio-button">
-            <label>
-              <input class="form-check-input" type="radio" name="gender"><span class="label-text">男</span>
-            </label>
-            &nbsp;&nbsp;&nbsp;
-            <label>
-              <input class="form-check-input" type="radio" name="gender"><span class="label-text">女</span>
-            </label>
+          <label class="control-label col-md-3">预约日期</label>
+          <div class="col-md-8">
+            <input class="form-control" type="text" placeholder="请填写门诊时间">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="control-label col-md-3">时间段</label>
+          <div class="col-md-8">
+            <input class="form-control" type="text" placeholder="请填写时间段">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="control-label col-md-3">规定人数</label>
+          <div class="col-md-8">
+            <input class="form-control" type="number" placeholder="请填写规定人数">
           </div>
         </div>
       </form>
@@ -194,51 +221,27 @@
     <div class="tile">
       <form class="form-horizontal">
         <div class="form-group row">
-          <label class="control-label col-md-3">姓名</label>
+          <label class="control-label col-md-3">科室</label>
           <div class="col-md-8">
             <input class="form-control" type="text" disabled="">
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-md-3">工号</label>
+          <label class="control-label col-md-3">预约日期</label>
           <div class="col-md-8">
-            <input class="form-control" type="number" disabled="">
+            <input class="form-control" type="text" disabled="">
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-md-3">职务</label>
+          <label class="control-label col-md-3">时间段</label>
           <div class="col-md-8">
-            <input class="form-control" type="phone" disabled="">
+            <input class="form-control" type="text" disabled="">
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-md-3">科室</label>
+          <label class="control-label col-md-3">规定人数</label>
           <div class="col-md-8">
-            <input class="form-control" type="email" disabled="">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="control-label col-md-3">角色</label>
-          <div class="col-md-8">
-            <input class="form-control" type="email" disabled="">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="control-label col-md-3">专长</label>
-          <div class="col-md-8">
-            <input class="form-control" type="email" disabled="">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label class="control-label col-md-3">性别</label>
-          <div class="animated-radio-button">
-            <label>
-              <input class="form-check-input" type="radio" name="gender" disabled=""><span class="label-text">男</span>
-            </label>
-            &nbsp;&nbsp;&nbsp;
-            <label>
-              <input class="form-check-input" type="radio" name="gender" disabled=""><span class="label-text">女</span>
-            </label>
+            <input class="form-control" type="text" disabled="">
           </div>
         </div>
       </form>
@@ -283,7 +286,7 @@
         addUser: function (othis) {
           layer.open({
             type: 1
-            , title: '添加用户'
+            , title: '添加'
             , area: '400px;'
             , shade: 0.3
             , id: 'LAY_insurance' //防止重复弹出
@@ -298,7 +301,7 @@
         change: function (othis) {
           layer.open({
             type: 1
-            , title: '查看用户信息'
+            , title: '修改'
             , area: '460px;'
             , shade: 0.3
             , id: 'LAY_insurance' //防止重复弹出
