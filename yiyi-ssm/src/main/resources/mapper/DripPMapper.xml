@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.DripPDao">
+    <resultMap id="Drip" type="java.util.HashMap">  
+        <result property="DripList_id" column="DripList_id"/>  
+        <result property="D_commonname" column="D_commonname"/>  
+        <result property="D_Sequence" column="D_Sequence"/>  
+        <result property="D_Dose" column="D_Dose"/>  
+        <result property="D_Time" jdbcType="TIMESTAMP"  column="D_Time"/>  
+        <result property="D_State" column="D_State"/>    
+    </resultMap>  
+
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="selectPdrip" resultMap="Drip"  parameterType="String">
+		select driplist.DripList_id,D_commonname,D_Sequence,D_Dose,DATE_FORMAT(Drip.D_Time,'%Y-%m-%d %H:%i:%s') D_Time,D_State
+        from drip,driplist,drug
+        where drip.DripList_id=driplist.DripList_id and DripList.Patient_id=#{Patient_id}
+	           and drug.Drug_id = drip.Drug_id
+	</select>
+
+</mapper>

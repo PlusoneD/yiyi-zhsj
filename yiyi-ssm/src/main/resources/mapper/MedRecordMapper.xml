@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.MedRecordDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+        <resultMap id="MedRecord" type="java.util.HashMap">  
+        <result property="MedRecord_id" column="MedRecord_id"/>  
+        <result property="Doctor_id" column="Doctor_id"/>  
+        <result property="Patient_id" column="Patient_id"/>  
+        <result property="M_Time" jdbcType="TIMESTAMP"  column="M_Time"/>  
+        <result property="M_State" column="M_State"/>  
+        <result property="M_Complaint" column="M_Complaint"/>    
+        <result property="M_InspectResult" column="M_InspectResult"/>  
+        <result property="M_Diagnosis" column="M_Diagnosis"/>  
+        <result property="M_State" column="M_State"/>  
+        <result property="M_Advice" column="M_Advice"/>   
+    </resultMap>  
+    <select id="selectAll" resultType="MedRecord">
+		SELECT
+			MedRecord_id,
+            Doctor_id,
+            Patient_id,
+            M_Time,
+            M_State,
+            M_Complaint,
+            M_InspectResult,
+            M_Diagnosis,
+            M_Advice
+		FROM
+			medrecord
+	</select>
+
+    <select id="selectByPatientId" resultMap="MedRecord" parameterType="String">
+		SELECT
+			medrecord.MedRecord_id,
+            FIRST.U_Name doctor,
+            SECOND.U_Name patient,
+            DATE_FORMAT(medrecord.M_Time,"%Y-%m-%d") M_Time,
+            medrecord.M_State,
+            medrecord.M_Complaint,
+            medrecord.M_InspectResult,
+            medrecord.M_Diagnosis,
+            medrecord.M_Advice
+		FROM
+			medrecord,user FIRST,user SECOND
+		where medrecord.Patient_id = #{id} AND FIRST.User_id=medrecord.Doctor_id AND SECOND.User_id=medrecord.Patient_id AND medrecord.M_State = "确认"
+	</select>
+	<select id="selectByDoctorId" resultMap="MedRecord" parameterType="String">
+		SELECT
+			MedRecord_id,
+            Doctor_id,
+            Patient_id,
+            M_Time,
+            M_State,
+            M_Complaint,
+            M_InspectResult,
+            M_Diagnosis,
+            M_Advice
+		FROM
+			medrecord
+		where medrecord.Doctor_id = #{id}
+
+	</select>
+	<select id="selectByDoctorAndTime" resultMap="MedRecord" parameterType="String">
+		SELECT
+			MedRecord_id,
+            FIRST.U_Name doctor,
+            SECOND.U_Name patient,
+            DATE_FORMAT(medrecord.M_Time,"%Y-%m-%d") M_Time,
+            M_State,
+            M_Complaint,
+            M_InspectResult,
+            M_Diagnosis,
+            M_Advice
+		FROM
+			medrecord,user FIRST,user SECOND
+		where medrecord.Doctor_id = #{id} AND FIRST.User_id=medrecord.Doctor_id AND SECOND.User_id=medrecord.Patient_id AND medrecord.M_Time BETWEEN #{time_start} AND #{time_end}
+		order by medrecord.M_Time DESC
+	</select>
+	<select id="selectByDoctorAndTime2" resultMap="MedRecord" parameterType="String">
+		SELECT
+			MedRecord_id,
+            FIRST.U_Name doctor,
+            SECOND.U_Name patient,
+            DATE_FORMAT(medrecord.M_Time,"%Y-%m-%d") M_Time,
+            M_State,
+            M_Complaint,
+            M_InspectResult,
+            M_Diagnosis,
+            M_Advice
+		FROM
+			medrecord,user FIRST,user SECOND
+		where medrecord.Doctor_id = #{id} AND FIRST.User_id=medrecord.Doctor_id AND SECOND.User_id=medrecord.Patient_id AND medrecord.M_Time BETWEEN #{time_start} AND #{time_end} AND medrecord.M_State = "保存"
+		order by medrecord.M_Time DESC
+	</select>
+	<insert id="insert" parameterType="MedRecord">
+    insert into medrecord (MedRecord_id, Doctor_id, Patient_id, M_Time, M_State,M_Complaint,
+      M_InspectResult, M_Diagnosis,M_Advice)
+    values (#{medRecord_id}, #{doctor_id}, #{patient_id}, 
+      #{m_Time}, #{m_State},#{m_Complaint}, #{m_InspectResult},#{m_Diagnosis}, #{m_Advice})
+   </insert>
+</mapper>

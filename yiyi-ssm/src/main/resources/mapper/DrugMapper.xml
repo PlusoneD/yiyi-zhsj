@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.DrugDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="selectAll" resultType="Drug">
+		SELECT
+			Drug_id,
+            D_CName,
+            D_CommonName,
+            D_EngName,
+            D_ShowName,
+            D_Component,
+            D_Indication,
+            D_Dosage,
+            D_Contraindications,
+            D_Precautions,
+            D_AdverseReactions,
+            D_DrugInteractions,
+            D_Type,
+            D_Pack,
+            D_InnComponentName
+		FROM
+			drug
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="String">
+    delete from drug
+    where Drug_id = #{id}
+  </delete>
+  <update id="updateByPrimaryKey" parameterType="String">
+    update drug
+    set D_CName = #{d_CName},
+    D_CommonName = #{d_CommonName},
+    D_EngName = #{d_EngName},
+    D_ShowName = #{d_ShowName},
+    D_Component = #{d_Component},
+    D_Indication = #{d_Indication},
+    D_Dosage = #{d_Dosage},
+    D_Precautions = #{d_Precautions},
+    D_AdverseReactions = #{d_AdverseReactions},
+    D_DrugInteractions = #{d_DrugInteractions},
+    D_Contraindications = #{d_Contraindications},
+    D_Type = #{d_Type},
+    D_Pack = #{d_Pack},
+    D_InnComponentName = #{d_InnComponentName}     
+    where Drug_id = #{drug_id}
+   </update>
+   <insert id="insert" parameterType="String">
+    insert into drug (Drug_id,D_CName,D_CommonName,D_EngName,D_ShowName,D_Component,D_Indication,D_Dosage,D_Contraindications,D_Precautions,D_AdverseReactions,D_DrugInteractions,D_Type,D_Pack,D_InnComponentName)
+    values (#{drug_id}, #{d_CName}, #{d_CommonName}, #{d_EngName}, #{d_ShowName},#{d_Component},#{d_Indication}, 
+           #{d_Dosage},#{d_Contraindications},#{d_Precautions},#{d_AdverseReactions},#{d_DrugInteractions},#{d_Type},#{d_Pack},#{d_InnComponentName})
+   </insert>
+</mapper>
