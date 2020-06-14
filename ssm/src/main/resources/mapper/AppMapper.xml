@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.AppointmentDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+
+	<resultMap id="AppointmentwithName" type="java.util.HashMap">
+		<result property="D_Name" column="D_Name" />
+		<result property="App_id" column="App_id" />
+		<result property="A_Date" column="A_Date" />
+		<result property="A_Time" column="A_Time" />
+		<result property="A_UpNum" column="A_UpNum" />
+		<result property="A_Num" column="A_Num" />
+	</resultMap>
+
+    <select id="selectAll" resultMap="AppointmentwithName">
+		SELECT
+			D_name,
+			App_id,
+			A_Date,
+			A_Time,
+			A_UpNum,
+			A_Num
+		FROM
+			appointment, department
+		where appointment.Department_id = department.Department_id
+	</select>
+
+    <select id="selectByTime" resultMap="AppointmentwithName">
+		SELECT
+			App_id,
+			D_name,
+			A_Date,
+			A_Time,
+			A_UpNum,
+			A_Num
+		FROM
+			appointment, department
+		where appointment.Department_id = department.Department_id
+		and A_time = #{time}
+	</select>
+
+    <select id="selectByDate" resultMap="AppointmentwithName">
+		SELECT
+			App_id,
+			D_name,
+			A_Date,
+			A_Time,
+			A_UpNum,
+			A_Num
+		FROM
+			appointment, department
+		where appointment.Department_id = department.Department_id
+		and A_Date = #{date}
+	</select>
+
+    <select id="selectByDepName" resultMap="AppointmentwithName">
+		SELECT
+			D_name,
+			App_id,
+			A_Date,
+			A_Time,
+			A_UpNum,
+			A_Num
+		FROM
+			appointment, department
+		where appointment.Department_id = department.Department_id
+		and D_name = #{name}
+	</select>
+
+	<select id="selectAppByid" resultType="Appointment">
+		SELECT
+			*
+		FROM
+			appointment
+		where App_id = #{id}
+	</select>
+
+	<update id="updateCurNumber">
+            update appointment
+            set A_Num = #{number}
+            where App_id=#{Appointment_id}
+    </update>
+
+	<select id="selectMaxAppointmentid" resultType="String">
+		SELECT
+			max(App_id)
+		FROM
+			appointment
+	</select>
+
+	<insert id="insertAppointment">
+		INSERT INTO appointment(App_id, Department_id, A_Date, A_Time, A_UpNum, A_Num)
+        VALUES (#{id}, #{depid}, #{date}, #{time}, #{number}, 0)
+	</insert>
+
+	<delete id="delAppointment">
+		DELETE FROM appointment
+		WHERE App_id = #{id}
+	</delete>
+
+	<update id="updateAppUpNum">
+            update appointment
+            set A_UpNum = #{upNum}
+            where App_id = #{id}
+    </update>
+
+</mapper>

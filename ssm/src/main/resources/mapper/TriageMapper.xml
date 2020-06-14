@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.TriageDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+	<resultMap id="TriageAndUser" type="java.util.HashMap">
+		<result property="Triage_id" column="Triage_id" />
+		<result property="Patient_id" column="Patient_id" />
+		<result property="T_Remark" column="T_Remark" />
+		<result property="T_State" column="T_State" />
+		<result property="T_SubmitTime" column="T_SubmitTime" />
+		<result property="T_AutoResult" column="T_AutoResult" />
+		<result property="T_Rate" column="T_Rate" />
+		<result property="U_Name" column="U_Name" />
+		<result property="U_Gender" column="U_Gender" />
+		<result property="P_Birthday" column="P_Birthday" />
+	</resultMap>
+
+    <select id="selectByState" resultMap="TriageAndUser">
+		SELECT
+			Triage_id,
+			triage.Patient_id,
+			T_Remark,
+			T_State,
+			T_SubmitTime,
+			T_AutoResult,
+			T_Rate,
+			U_Name,
+			U_Gender,
+			P_Birthday
+		FROM
+			triage, user, patient
+		where triage.Patient_id = user.User_id
+		and triage.Patient_id = patient.Patient_id
+		and T_State = #{state}
+		order by T_SubmitTime asc
+	</select>
+
+    <select id="selectByStateAndUserid" resultType="Triage">
+		SELECT
+			*
+		FROM
+			triage
+		where T_State = #{state} and Patient_id = #{user_id}
+		order by T_SubmitTime desc
+	</select>
+
+	<select id="selectMaxTriageid" resultType="String">
+		SELECT
+			max(Triage_id)
+		FROM
+			triage
+	</select>
+
+	<insert id="insertTriage">
+		INSERT INTO triage(Triage_id, Patient_id, T_Remark,T_State, T_SubmitTime, T_AutoResult, T_Rate)
+        VALUES (#{id}, #{user_id},#{info},#{state},#{time}, #{name}, #{rate})
+	</insert>
+
+	<update id="updateTriageState">
+		update triage set T_Result = #{depname},T_State=#{state},T_TriageTime=#{time}
+         where Triage_id = #{triageid}
+	</update>
+</mapper>

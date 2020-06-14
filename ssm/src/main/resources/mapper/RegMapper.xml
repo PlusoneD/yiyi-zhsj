@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.RegistrationDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+	<resultMap id="RegistrationInfoForPatient" type="java.util.HashMap">
+		<result property="Registration_id" column="Registration_id" />
+		<result property="Patient_id" column="Patient_id" />
+		<result property="Doctor_id" column="Doctor_id" />
+		<result property="R_TimeRegistration" column="R_TimeRegistration" />
+		<result property="App_id" column="App_id" />
+		<result property="R_State" column="R_State" />
+		<result property="D_Name" column="D_Name" />
+		<result property="A_Date" column="A_Date" />
+		<result property="A_Time" column="A_Time" />
+	</resultMap>
+
+	<resultMap id="RegistrationInfoForDoc" type="java.util.HashMap">
+		<result property="Registration_id" column="Registration_id" />
+		<result property="Patient_id" column="Patient_id" />
+		<result property="Department_id" column="Department_id" />
+		<result property="R_TimeRegistration" column="R_TimeRegistration" />
+		<result property="R_State" column="R_State" />
+		<result property="U_Name" column="U_Name" />
+		<result property="U_Gender" column="U_Gender" />
+		<result property="U_PhoneNumber" column="U_PhoneNumber" />
+		<result property="P_Birthday" column="P_Birthday" />
+		<result property="Doctor_id" column="Doctor_id" />
+	</resultMap>
+
+    <select id="selectByPatientid" resultMap="RegistrationInfoForPatient">
+		SELECT
+			Registration_id,
+			appointment.App_id,
+			Patient_id,
+			Doctor_id,
+			R_TimeRegistration,
+			R_State,
+			D_Name,
+			A_Date,
+			A_Time
+		FROM
+			appointment, department, registration
+		where appointment.Department_id = department.Department_id
+		and registration.App_id = appointment.App_id
+		and Patient_id = #{id}
+	</select>
+
+	<select id="selectByDepartmentid" resultMap="RegistrationInfoForDoc">
+		SELECT
+			Registration_id,
+			Patient.Patient_id,
+			Department_id,
+			Doctor_id,
+			R_TimeRegistration,
+			R_State,
+			U_Name,
+			U_Gender,
+			U_PhoneNumber,
+			P_Birthday
+
+		FROM
+			appointment,  registration, user, patient
+		where registration.Patient_id = user.User_id
+		and registration.Patient_id = patient.Patient_id
+		and registration.App_id = appointment.App_id
+		and appointment.Department_id = #{id}
+		and appointment.A_Date = #{date}
+		and appointment.A_time = #{time}
+		and registration.R_State = #{state}
+		order by R_TimeRegistration asc
+	</select>
+
+    <select id="selectByRegid" resultMap="RegistrationInfoForPatient">
+		SELECT
+			Registration_id,
+			Patient_id,
+			R_TimeRegistration,
+			appointment.App_id,
+			Doctor_id,
+			R_State,
+			D_Name,
+			A_Date,
+			A_Time
+		FROM
+			appointment, department, registration
+		where appointment.Department_id = department.Department_id
+		and registration.App_id = appointment.App_id
+		and Registration_id = #{id}
+	</select>
+
+    <select id="selectByAppid" resultMap="RegistrationInfoForPatient">
+		SELECT
+			Registration_id,
+			Patient_id,
+			appointment.App_id,
+			Doctor_id,
+			R_TimeRegistration,
+			R_State,
+			D_Name,
+			A_Date,
+			A_Time
+		FROM
+			appointment, department, registration
+		where appointment.Department_id = department.Department_id
+		and registration.App_id = appointment.﻿App_id
+		and registration.App_id = #{id}
+	</select>
+
+	<select id="selectMaxRegid" resultType="String">
+		SELECT
+			max(Registration_id)
+		FROM
+			registration
+	</select>
+
+	<insert id="insert">
+		INSERT INTO registration(Registration_id, Patient_id, App_id, R_TimeRegistration, R_State)
+        VALUES (#{id},#{Patient_id},#{App_id},#{time},#{state})
+    </insert>
+
+	<delete id="delete">
+		DELETE FROM registration
+		WHERE Registration_id = #{id}
+	</delete>
+
+
+	<update id="updateRegState">
+		update registration set R_State = #{state}
+         where Registration_id = #{regid}
+	</update>
+
+	<update id="updateRegStateAndD">
+		update registration set R_State = #{state}, Doctor_id = #{Doctor_id}
+         where Registration_id = #{regid}
+	</update>
+
+    <update id="updateRegStateByDAndState">
+		update registration set R_State = '已就诊'
+         where R_State = #{state} and Doctor_id = #{Doctor_id}
+	</update>
+</mapper>

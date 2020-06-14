@@ -1,7 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=GB2312"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <meta name="description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+  <!-- Twitter meta-->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@pratikborsadiya">
+  <meta property="twitter:creator" content="@pratikborsadiya">
   <!-- Open Graph Meta-->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Vali Admin">
@@ -10,14 +18,12 @@
   <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
   <meta property="og:description"
     content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-  <title>易医 - 分诊信息</title>
+  <title>易医 - 管理系统</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Main CSS-->
   <link rel="stylesheet" type="text/css" href="../css/main.css">
-  <link rel="stylesheet" type="text/css" href="../css/triage.css">
-  <link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,7 +31,7 @@
 
 <body class="app sidebar-mini">
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="../index.html">Yiyi</a>
+  <header class="app-header"><a class="app-header__logo" href="index.html">Yiyi</a>
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
       aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
@@ -41,7 +47,6 @@
       </li>
     </ul>
   </header>
-
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
@@ -55,13 +60,13 @@
     <ul class="app-menu">
       <li><a class="app-menu__item" href="Patient_MedicalRecord.html"><i
             class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">病历</span></a></li>
-      <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">分诊服务</span><i
             class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="Patient_Triage_AddTriageInfo.html"><i class="icon fa fa-circle-o"></i>
               智能分诊</a></li>
-          <li><a class="treeview-item active" href="Patient_Triage_TriageInfo.html" rel="noopener"><i
+          <li><a class="treeview-item" href="Patient_Triage_TriageInfo.html" target="_blank" rel="noopener"><i
                 class="icon fa fa-circle-o"></i>分诊历史</a></li>
         </ul>
       </li>
@@ -75,11 +80,11 @@
                 class="icon fa fa-circle-o"></i>预约历史</a></li>
         </ul>
       </li>
-      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+      <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">药品提示</span><i
             class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class="treeview-item" href="Patient_Medicine.html"><i class="icon fa fa-circle-o"></i> 用药提示</a></li>
+          <li><a class="treeview-item  active" href="Patient_Medicine.html"><i class="icon fa fa-circle-o"></i> 用药提示</a></li>
           <li><a class="treeview-item" href="Patient_Drip.html"><i class="icon fa fa-circle-o"></i>点滴提示</a></li>
         </ul>
       </li>
@@ -88,81 +93,39 @@
 
     </ul>
   </aside>
-
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1>分诊结果</h1>
+        <h1><i class="fa fa-th-list"></i> 药品提示</h1>
       </div>
-      <ul class="app-breadcrumb breadcrumb">
+      <ul class="app-breadcrumb breadcrumb side">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item">分诊服务</li>
-        <li class="breadcrumb-item"><a style="color:#009688;" href="#">分诊结果</a></li>
+        <li class="breadcrumb-item">药品提示</li>
+        <li class="breadcrumb-item active"><a href="#">用药提示</a></li>
       </ul>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">待人工分诊记录</h3>
           <div class="tile-body">
             <div class="table-responsive">
               <table class="table table-hover table-bordered" id="sampleTable">
                 <thead>
                   <tr>
-                    <th>提交时间</th>
-                    <th>详情描述</th>
-                    <th>智能分诊结果</th>
-                    <th>智能分诊准确度</th>
-                    <th>预约挂号</th>
+                    <th style="width:10%">药品名称</th>
+                    <th>功能主治</th>
+                    <th>用法用量</th>
                   </tr>
                 </thead>
-                <tbody>
-                <tbody id="beforetbody">
-
+                <tbody id="tbody">
                 </tbody>
-                <script type="text/html" id="beforetbody-script">
-                      {{ each data value i }}
-                      <tr class="table-data-line">
-                          <td> {{ value.name }} </td>
-                          <td> {{ value.batchnum }}</td>
-                          <td> {{ value.standard }}</td>
-                          <td> {{ value.validity }}</td>
-                          <td> {{ value.company }}</td>
-                      </tr>
-                      {{ /each }}
-                  </script>
-
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="tile">
-          <h3 class="tile-title">分诊历史记录</h3>
-          <div class="tile-body">
-            <div class="table-responsive">
-              <table class="table table-hover table-bordered" id="sampleTable1">
-                <thead>
-                  <tr>
-                    <th>提交时间</th>
-                    <th>详情描述</th>
-                    <th>智能分诊结果</th>
-                    <th>人工分诊结果</th>
-                    <th>预约挂号</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2020/3/18 20:20:00</td>
-                    <td>肚子疼、牙疼、头疼</td>
-                    <td>内科</td>
-                    <td>内科</td>
-                    <td><button class="btn btn-primary btn-sm" type="button">预约挂号</button></td>
-                  </tr>
-                </tbody>
+                 <script type="text/html" id="MedicineP-script">
+                        {{ each data value i }}<tr>
+                        <td style="width=10%">{{value.d_CommonName}} </td>
+                        <td>{{value.d_Indication}} </td>
+                        <td>{{value.d_Dosage}}</td>
+                        {{ /each }}
+                 </script>
               </table>
             </div>
           </div>
@@ -171,6 +134,8 @@
     </div>
   </main>
 
+
+
   <!-- Essential javascripts for application to work-->
   <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/popper.min.js"></script>
@@ -178,15 +143,12 @@
   <script src="../js/main.js"></script>
   <!-- The javascript plugin to display page loading on top-->
   <script src="../js/plugins/pace.min.js"></script>
-  <script src="../layui/layui.js"></script>
   <!-- Page specific javascripts-->
   <!-- Data table plugin-->
   <script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="../js/plugins/dataTables.bootstrap.min.js"></script>
-  <script type="text/javascript">
-    $('#sampleTable').DataTable();
-    $('#sampleTable1').DataTable();
-  </script>
+  <script type="text/javascript" src="../js/template.js"></script>
+
   <!-- Google analytics script-->
   <script type="text/javascript">
     if (document.location.hostname == 'pratikborsadiya.in') {
@@ -199,40 +161,32 @@
       ga('create', 'UA-72504830-1', 'auto');
       ga('send', 'pageview');
     }
-
-    $(document).ready(function () {
-      $.ajax({
-        url: "getByStateandUserid",
-        type: "post",
-        data: {
-          user_id: 'P0001',
-          state: '未人工分诊',
-        },
-        success: function (data) {
-          console.log(data);
-          $("beforetbody").append(template("beforetbody-script", { data: data }));
-        }, error: function (data) {
-          console.log(data);
-        }
-      });
-
-      $.ajax({
-        url: "getByStateandUserid",
-        type: "post",
-        data: {
-          user_id: 'P0001',
-          state: '已人工分诊',
-        },
-        success: function (data) {
-          console.log(data);
-          $("beforetbody").append(template("beforetbody-script", { data: data }));
-        }, error: function (data) {
-          console.log(data);
-        }
-      });
-    })
-
   </script>
+  <script>
+  $(document).ready(function () {
+      $.ajax({
+          url: "getMByPatient_id",
+          type: "post",
+          data:{
+              Patient_id:"P0000003"
+          },
+          success: function (data) {
+              console.log(data);
+              if(data == "") {
+                  alert("暂无相关信息！");
+                  console.log(data);
+              }
+              
+              $("#tbody").append(template("MedicineP-script",{data:data}));
+              $("#sampleTable").dataTable({bAutoWidth: false});
+          }, error: function (data) {
+          	alert("error");
+              console.log(data);
+          }
+      });
+  });
+  </script>
+
 </body>
 
 </html>

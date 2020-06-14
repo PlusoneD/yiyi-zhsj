@@ -1,0 +1,62 @@
+.body_box { background:url(../images/human_body/body_bg.png) no-repeat right bottom #fff; padding: 60px 60px;width:70%; margin: 0 auto;}
+/*男正面*/
+.man_front { width:283px; height:413px; background:url(../images/human_body/man_front_bg.png) no-repeat; display:block; position:relative; z-index:10;}
+.man_front a { position:absolute; display:block;}
+.man_front a:hover { background:url(../images/human_body/man_front_bg.png) no-repeat;}
+.man_front a.man_front_head { width:100px; height:62px; top:0; left:111px; background-position:-370px -23px; z-index:12;}
+.man_front a.man_front_neck { width:120px; height:22px; top:60px; left:110px; background-position:-369px -91px; z-index:12;}
+.man_front a.man_front_chest { width:129px; height:51px; top:74px; left:101px; background-position:-360px -115px; z-index:12;}
+.man_front a.man_front_belly { width:126px; height:60px; top:125px; left:101px; background-position:-360px -174px; z-index:12;}
+.man_front a.man_front_gential { width:186px; height:52px; top:181px; left:96px; background-position:-355px -246px; z-index:12;}
+.man_front a.man_front_leg { width:140px; height:183px; top:230px; left:36px; background-position:-593px -207px; z-index:12;}
+.man_front a.man_front_arm { width:207px; height:145px; top:79px; left:9px; background-position:-566px -32px; z-index:11;}
+.man_front .headLink {position:absolute;width:130px;height:30px;right:0; padding:6px; z-index:13; background:#666; top:10px; display:none;}
+.man_front .headLink a {color:#fff; padding:0 2px; float:left; line-height:16px; height:16px; margin-bottom:4px; margin-left:4px; font-family:simsun; display:inline-block; position:static;}
+.man_front .headLink a:hover {background:#f90; color:#fff !important;}
+/*男背面*/
+.man_back { width:283px; height:413px; background:url(../images/human_body/man_back_bg.png) no-repeat; display:block; position:relative; z-index:10;}
+.man_back a { position:absolute; display:block;}
+.man_back a:hover { background:url(../images/human_body/man_back_bg.png) no-repeat;}
+.man_back a.man_back_pelvic { width:146px; height:19px; top:180px; left:30px; background-position:-530px -195px; z-index:12;}
+.man_back a.man_back_buns { width:141px; height:34px; top:199px; left:96px; background-position:-596px -229px; z-index:12;}
+.man_back a.man_back_loin { width:124px; height:42px; top:143px; left:101px; background-position:-601px -144px; z-index:12;}
+.man_back a.man_back_bone { width:150px; height:34px; top:75px; left:86px; background-position:-586px -48px; z-index:12;}
+.man_back a.man_back_backside { width:90px; height:40px; top:103px; left:128px; background-position:-628px -88px; z-index:12;}
+.man_back a.man_back_all { width:220px; height:413px; top:0px; left:15px; background-position:-299px 0; z-index:11;}
+/*女正面*/
+.woman_front { width:283px; height:413px; background:url(../images/human_body/woman_front_bg.png) no-repeat; display:block; position:relative; z-index:10;}
+.woman_front a { position:absolute; display:block;}
+.woman_front a:hover { background:url(../images/human_body/woman_front_bg.png) no-repeat;}
+.woman_front a.woman_front_head { width:122px; height:68px; top:0; left:102px; background-position:-380px -0px; z-index:12;}
+.woman_front a.woman_front_neck { width:89px; height:18px; top:63px; left:118px; background-position:-396px -70px; z-index:12;}
+.woman_front a.woman_front_chest { width:160px; height:64px; top:77px; left:100px; background-position:-378px -93px; z-index:12;}
+.woman_front a.woman_front_belly { width:126px; height:60px; top:140px; left:100px; background-position:-378px -167px; z-index:12;}
+.woman_front a.woman_front_gential { width:181px; height:34px; top:187px; left:98px; background-position:-376px -233px; z-index:12;}
+.woman_front a.woman_front_leg { width:140px; height:208px; top:207px; left:36px; background-position:-600px -190px; z-index:12;}
+.woman_front a.woman_front_arm { width:207px; height:145px; top:84px; left:2px; background-position:-566px -32px; z-index:11;}
+.woman_front .headLink {position:absolute;width:130px;height:30px;right:0; padding:6px; z-index:13; background:#666; top:10px; display:none;}
+.woman_front .headLink a {color:#fff; padding:0 2px; float:left; line-height:16px; height:16px; margin-bottom:4px; margin-left:4px; font-family:simsun; display:inline-block; position:static;}
+.woman_front .headLink a:hover {background:#f90; color:#fff !important;}
+/*女背面*/
+.woman_back { width:283px; height:413px; background:url(../images/human_body/woman_back_bg.png) no-repeat; display:block; position:relative; z-index:10;}
+.woman_back a { position:absolute; display:block;}
+.woman_back a:hover { background:url(../images/human_body/woman_back_bg.png) no-repeat;}
+.woman_back a.woman_back_pelvic { width:146px; height:19px; top:178px; left:30px; background-position:-530px -193px; z-index:12;}
+.woman_back a.woman_back_buns { width:141px; height:34px; top:188px; left:96px; background-position:-596px -218px; z-index:12;}
+.woman_back a.woman_back_loin { width:124px; height:42px; top:143px; left:101px; background-position:-601px -144px; z-index:12;}
+.woman_back a.woman_back_bone { width:150px; height:40px; top:113px; left:130px; background-position:-630px -98px; z-index:12;}
+.woman_back a.woman_back_backside { width:130px; height:36px; top:77px; left:104px; background-position:-604px -50px; z-index:12;}
+.woman_back a.woman_back_all { width:220px; height:413px; top:0px; left:15px; background-position:-299px 0; z-index:11;}
+/**/
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+a:hover {
+    text-decoration: none;
+}

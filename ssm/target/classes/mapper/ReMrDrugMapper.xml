@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.ReMrDrugDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+  
+	
+	<select id="selectByMrId" resultType="Re_Mr_Drug" parameterType="String">
+		SELECT
+			r_medrecord_drug.R_id,
+			r_medrecord_drug.MedRecord_id,
+			drug.D_CommonName drugname
+		FROM
+			r_medrecord_drug,drug
+		where r_medrecord_drug.MedRecord_id = #{id} AND drug.Drug_id=r_medrecord_drug.Drug_id
+	</select>
+
+    <insert id="insert">
+    insert into r_medrecord_drug (R_id, MedRecord_id, Drug_id)
+    values (#{r_id}, #{medRecord_id}, #{drug_id}) 
+    </insert>
+    <delete id="deleteByPrimaryKey" parameterType="String">
+	    DELETE 
+	    FROM r_medrecord_drug
+	    where medRecord_id = #{id}
+	</delete>
+   
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.DepartmentDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <select id="selectAll" resultType="Department" parameterType="String">
+		SELECT
+			*
+		FROM
+			department
+	</select>
+
+    <select id="selectByDepartmentid" resultType="Department">
+		SELECT
+			*
+		FROM
+			department
+		where Department_id = #{id}
+	</select>
+
+    <select id="selectByName" resultType="Department">
+		SELECT
+			﻿*
+		FROM
+			department
+		where D_Name = #{name}
+	</select>
+</mapper>

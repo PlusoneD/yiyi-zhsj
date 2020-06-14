@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhsj.dao.UserDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <resultMap id="Patient" type="java.util.HashMap">
+        <result property="Patient_id" column="Patient_id" />
+        <result property="Identity" column="U_Identity" />
+        <result property="Name" column="U_Name" />
+        <result property="Nickname" column="P_Nickname" />
+        <result property="Gender" column="U_Gender" />
+        <result property="PhoneNumber" column="U_PhoneNumber" />
+        <result property="Birthday" column="P_Birthday" />
+        <result property="MailAddress" column="P_MailAddress" />
+        <result property="MedicalInsuranceCardNumber" column="P_MedicalInsuranceCardNumber" />
+    </resultMap>
+
+	<resultMap id="PatientwithPwd" type="java.util.HashMap">
+		<result property="Patient_id" column="Patient_id" />
+		<result property="Identity" column="U_Identity" />
+		<result property="Name" column="U_Name" />
+		<result property="pwd" column="U_Password" />
+		<result property="Nickname" column="P_Nickname" />
+		<result property="Gender" column="U_Gender" />
+		<result property="PhoneNumber" column="U_PhoneNumber" />
+		<result property="Birthday" column="P_Birthday" />
+		<result property="MailAddress" column="P_MailAddress" />
+		<result property="MedicalInsuranceCardNumber" column="P_MedicalInsuranceCardNumber" />
+	</resultMap>
+
+	<resultMap id="Staff" type="java.util.HashMap">
+	<result property="Staff_id" column="Staff_id" />
+	<result property="EmpNum" column="S_EmpNum" />
+	<result property="Identity" column="S_Identity" />
+	<result property="Title" column="S_Title" />
+	<result property="Gender" column="U_Gender" />
+	<result property="PhoneNumber" column="U_PhoneNumber" />
+	<result property="Name" column="U_Name" />
+</resultMap>
+
+	<resultMap id="StaffwithPwd" type="java.util.HashMap">
+		<result property="Staff_id" column="Staff_id" />
+		<result property="EmpNum" column="S_EmpNum" />
+		<result property="Identity" column="S_Identity" />
+		<result property="Title" column="S_Title" />
+		<result property="Gender" column="U_Gender" />
+		<result property="PhoneNumber" column="U_PhoneNumber" />
+		<result property="Name" column="U_Name" />
+		<result property="pwd" column="U_Password" />
+	</resultMap>
+
+    <select id="selectAllPatient" resultMap="Patient">
+		SELECT
+			Patient_id,
+			U_Identity,
+			U_Name,
+			P_Nickname,
+			U_Gender,
+			U_PhoneNumber,
+			P_Birthday,
+			P_MailAddress,
+			P_MedicalInsuranceCardNumber
+		FROM
+			user, patient
+		where user.User_id = patient.Patient_id
+	</select>
+
+	<select id="selectPatientByNickname" resultMap="PatientwithPwd">
+		SELECT
+			Patient_id,
+			U_Identity,
+			U_Name,
+			U_Password,
+			P_Nickname,
+			U_Gender,
+			U_PhoneNumber,
+			P_Birthday,
+			P_MailAddress,
+			P_MedicalInsuranceCardNumber
+		FROM
+			user, patient
+		where user.User_id = patient.Patient_id
+		and P_Nickname = #{number}
+	</select>
+
+	<select id="selectAllStaff" resultMap="Staff">
+		SELECT
+			Staff_id,
+			S_EmpNum,
+			S_Identity,
+			S_Title,
+			U_Gender,
+			U_PhoneNumber,
+			U_Name
+		FROM
+			user,staff
+		where user.User_id = staff.Staff_id
+	</select>
+
+	<select id="selectStaffByEmpNum" resultMap="StaffwithPwd">
+		SELECT
+			Staff_id,
+			S_EmpNum,
+			S_Identity,
+			S_Title,
+			U_Gender,
+			U_PhoneNumber,
+			U_Name,
+			U_Password
+		FROM
+			user,staff
+		where user.User_id = staff.Staff_id
+		and S_EmpNum = #{number}
+	</select>
+
+
+    <select id="selectStaffInfo" resultMap="Staff">
+		SELECT
+			Staff_id,
+			S_EmpNum,
+			S_Identity,
+			S_Title,
+			U_Gender,
+			U_PhoneNumber,
+			U_Name
+		FROM
+			user,staff
+		where user.User_id = staff.Staff_id and staff.Staff_id = #{id}
+	</select>
+
+    <select id="selectDoctorInfo" resultType="Doctor">
+		SELECT * FROM doctor WHERE ﻿Doctor_id = #{id}
+	</select>
+
+    <select id="selectNurseInfo" resultType="Nurse">
+		SELECT * FROM nurse where Nurse_id = #{id}
+	</select>
+
+	<select id="selectUser" resultType="User">
+		SELECT
+			*
+		FROM
+			user
+		where User_id = #{id}
+	</select>
+
+	<select id="selectMaxPatientid" resultType="String">
+		SELECT
+			max(Patient_id)
+		FROM
+			patient
+	</select>
+
+	<select id="selectMaxNurseid" resultType="String">
+		SELECT
+			max(Nurse_id)
+		FROM
+			nurse
+	</select>
+
+	<select id="selectMaxTriagePersonid" resultType="String">
+		SELECT
+			max(Staff_id)
+		FROM
+			staff
+		WHERE S_Identity = 'TriagePerson'
+	</select>
+
+	<select id="selectMaxManagerid" resultType="String">
+		SELECT
+			max(Staff_id)
+		FROM
+			staff
+		WHERE S_Identity = 'Manager'
+	</select>
+
+	<select id="selectMaxDoctorid" resultType="String">
+		SELECT
+			max(﻿Doctor_id)
+		FROM
+			doctor
+	</select>
+
+	<update id="updateUserPwd">
+		update user
+        set U_Password = #{pwd}
+        where User_id = #{id}
+	</update>
+
+	<update id="updateTitle">
+		update staff
+        set S_Title = #{title}
+        where Staff_id = #{id}
+	</update>
+
+	<update id="updateDoctorInfo">
+		update doctor set Department_id = #{depid}, D_Background = #{background}, D_Specialization = #{specialization}, D_Description = #{description}
+         where ﻿Doctor_id = #{id}
+	</update>
+
+	<update id="updateNurseInfo">
+		update nurse set Department_id = #{depid}
+         where Nurse_id = #{id}
+	</update>
+
+	<delete id="delUser">
+		DELETE FROM user
+		WHERE User_id = #{id}
+	</delete>
+
+	<insert id="insertUser">
+		INSERT INTO user(User_id, U_Identity, U_Name, U_Gender, U_Password)
+        VALUES (#{id}, #{sysiden},#{name},#{gender},#{password})
+	</insert>
+
+	<insert id="insertStaff">
+		INSERT INTO staff(Staff_id, S_EmpNum, S_Identity)
+        VALUES (#{id}, #{empnum},#{identity})
+	</insert>
+
+	<insert id="insertDoctor">
+		INSERT INTO doctor(﻿Doctor_id, Department_id)
+        VALUES (#{id}, #{depid})
+	</insert>
+
+	<insert id="insertNurse">
+		INSERT INTO nurse(Nurse_id, Department_id)
+        VALUES (#{id}, #{depid})
+	</insert>
+
+	<select id="selectPwd" resultType="User">
+		SELECT *
+		FROM user
+		where User_id = #{User_id}
+	</select>
+
+	<select id="selectPInfo" resultMap="Patient">
+		SELECT
+			Patient_id,
+			U_Identity,
+			U_Name,
+			P_Nickname,
+			U_Gender,
+			U_PhoneNumber,
+			P_Birthday,
+			P_MailAddress,
+			P_MedicalInsuranceCardNumber
+		FROM
+			user, patient
+		where user.User_id = patient.Patient_id and user.User_id= #{User_id}
+	</select>
+
+	<update id="updatePInfo">
+		update user,patient
+        set U_PhoneNumber = #{PhoneNumber} , P_Birthday = #{Birthday} , P_MedicalInsuranceCardNumber = #{MedicalInsuranceCardNumber} , P_MailAddress = #{MailAddress} , U_Gender = #{Gender}
+        where user.User_id = patient.Patient_id and user.User_id= #{User_id}
+	</update>
+
+	<update id="updateNInfo">
+		update user
+        set U_PhoneNumber = #{PhoneNumber} , U_Gender = #{Gender}
+        where user.User_id= #{User_id}
+	</update>
+
+	<update id="updateDInfo">
+		update user,doctor
+        set U_PhoneNumber = #{PhoneNumber} , U_Gender = #{Gender} , D_Background = #{Background} , D_Specialization = #{Specialization} , D_Description = #{Description}
+        where user.User_id = doctor.﻿Doctor_id and user.User_id= #{User_id}
+   </update>
+
+	<insert id="insertUserP">
+		INSERT INTO user(User_id, U_Identity, U_Name, U_Password)
+        VALUES (#{id},"Patient",#{name},#{password})
+	</insert>
+
+	<insert id="insertPatient">
+		INSERT INTO patient(Patient_id, P_Nickname)
+        VALUES (#{id}, #{nickname})
+	</insert>
+
+	<select id="selectNN" resultType="Patient">
+        SELECT * from patient
+        where P_Nickname = #{nickname}
+	</select>
+
+	<select id="selectEN" resultType="Staff">
+        SELECT * from staff
+        where S_EmpNum = #{nickname}
+	</select>
+
+</mapper>
