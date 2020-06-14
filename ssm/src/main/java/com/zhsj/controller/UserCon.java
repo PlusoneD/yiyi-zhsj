@@ -191,7 +191,7 @@ public class UserCon {
         String sysiden = "staff";
         String password = "123456";
 
-        String id = UserSer.addUser(identity, name, gender, password);
+        String id = UserSer.addUser(sysiden, name, gender, password);
 
         UserSer.addStaff(id, empnum, identity);
 
