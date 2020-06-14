@@ -92,7 +92,7 @@
                 <h3 class="tile-title">查找电子病历</h3>
                 <div class="tile-body">
                
-                    <form class="row" action="medrecordDocPage" method="post">
+                    <form class="row" action="Doctor_MedicalRecord_Page" method="post">
                     
                       <div class="col-md-12  mb-4">
                         <label>病患姓名</label>
